@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*! Writen  by SCSS */
+/*下層ページ最初のセクション上部余白を統一する際は使用してみて下さい*/
+.section_cont {
+  padding: 100px 0; }
+  .section_cont.first_sec {
+    padding-top: 80px; }
+
+.inner_main {
+  position: relative;
+  /*以降は適宜書き換えて下さい	*/
+  padding: 200px 20px;
+  background: #333; }
+  .inner_main .main_ttl {
+    text-align: center;
+    font-size: clamp(30px, 3.334vw, 40px);
+    color: #FFF; }
+
+.sec_ttl_wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px; }
+
+.sec_ttl {
+  font-size: clamp(20px, 2.5vw, 30px);
+  text-align: center; }
+
+.read {
+  font-size: clamp(12px, 1.167vw, 14px); }
+
+/*# sourceMappingURL=inner.css.map */

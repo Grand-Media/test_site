@@ -1,0 +1,103 @@
+/*! Writen  by SCSS */
+.mainvisual {
+  position: relative; }
+  .mainvisual .main_image {
+    position: relative; }
+    .mainvisual .main_image:before {
+      content: "";
+      display: block;
+      background: #600;
+      padding-bottom: 40%;
+      pointer-events: none; }
+  .mainvisual .main_ttl_wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .mainvisual .main_ttl_wrap .main_ttl {
+      font-size: clamp(30px, 3.334vw, 40px);
+      color: #FFF;
+      line-height: 1; }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(1) {
+        transition-delay: 0s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(1) {
+            transition-delay: 0s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(2) {
+        transition-delay: 0.1s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(2) {
+            transition-delay: 0.15s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(3) {
+        transition-delay: 0.2s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(3) {
+            transition-delay: 0.3s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(4) {
+        transition-delay: 0.3s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(4) {
+            transition-delay: 0.45s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(5) {
+        transition-delay: 0.4s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(5) {
+            transition-delay: 0.6s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(6) {
+        transition-delay: 0.5s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(6) {
+            transition-delay: 0.75s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(7) {
+        transition-delay: 0.6s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(7) {
+            transition-delay: 0.9s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(8) {
+        transition-delay: 0.7s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(8) {
+            transition-delay: 1.05s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(9) {
+        transition-delay: 0.8s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(9) {
+            transition-delay: 1.2s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(10) {
+        transition-delay: 0.9s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(10) {
+            transition-delay: 1.35s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(11) {
+        transition-delay: 1s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(11) {
+            transition-delay: 1.5s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(12) {
+        transition-delay: 1.1s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(12) {
+            transition-delay: 1.65s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(13) {
+        transition-delay: 1.2s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(13) {
+            transition-delay: 1.8s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(14) {
+        transition-delay: 1.3s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(14) {
+            transition-delay: 1.95s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(15) {
+        transition-delay: 1.4s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(15) {
+            transition-delay: 2.1s; } }
+      .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(16) {
+        transition-delay: 1.5s; }
+        @media screen and (max-width: 480px) {
+          .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(16) {
+            transition-delay: 2.25s; } }
+
+/*# sourceMappingURL=top.css.map */

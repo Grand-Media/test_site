@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja"><!-- InstanceBegin template="/Templates/meta.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- InstanceParam name="INNER_META" type="boolean" value="true" passthrough="true" -->
+<!-- InstanceParam name="PAGENAME_JA" type="text" value="コンセプト" passthrough="true" -->
+<!-- InstanceParam name="KEYWORD" type="text" value="@@(PAGENAME_JA)@@" passthrough="true" -->
+<!-- InstanceParam name="DESCRIPTION" type="text" value="@@(PAGENAME_JA)@@" passthrough="true" -->
+<!-- InstanceParam name="PAGENAME_EN" type="text" value="concept" passthrough="true" -->
+<!-- InstanceParam name="CANONICAL" type="text" value="@@(PAGENAME_EN)@@/" passthrough="true" -->
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,user-scalable=yes,maximum-scale=3.0">
+<!-- メタタグ ここから -->
+<!-- TemplateBeginPassthroughIf cond="_document['INNER_META']" --><!-- 下層用META -->
+<title>@@@(PAGENAME_JA)@@@｜[title]</title>
+<meta name="keywords" content="@@@(KEYWORD)@@@,○○○○○○○○○" />
+<meta name="description" content="○○○○○○○○○の@@@(DESCRIPTION)@@@ページ" />
+<!-- <link rel="canonical" href="https://○○○.○○○/○○○/@@@(CANONICAL)@@@">	-->
+<!-- TemplateEndPassthroughIf -->
+<!-- TemplateBeginPassthroughIf cond="!_document['INNER_META']" --><!-- トップ用META -->
+<title>[title]</title>
+<meta name="keywords" content="○○○○○○○○○" />
+<meta name="description" content="○○○○○○○○○" />
+<!-- <link rel="canonical" href="https://○○○.○○○/○○○/"> -->
+<!-- TemplateEndPassthroughIf -->
+<!-- メタタグ ここまで -->
+	
+<!-- CSS/JS ここから -->
+<!--	YAKUHAN	Noto_serif	Noto_sans	-->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.0/dist/css/yakuhanmp.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.0/dist/css/yakuhanjp.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">	
+<!--	YAKUHAN	Noto_serif	Noto_sans	-->
+
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript" src="../js/util.js"></script>
+	
+<script type="text/javascript" src="../js/SmoothScroll.js"></script>	
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- TemplateBeginEditable name="INHEAD" -->
+<!-- ページ固有CSS/JS ここから -->
+	
+<!-- ページ固有CSS/JS ここまで -->
+<!-- TemplateEndEditable -->
+
+<!-- InstanceEndEditable -->
+<!-- CSS/JS ここまで -->
+	
+<!-- 解析タグ(head内) ここから -->
+	
+<!-- 解析タグ(head内) ここまで -->
+</head>
+<body id="@@@(PAGENAME_EN)@@@">
+	
+<!-- 解析タグ(body開始直後) ここから -->
+	
+<!-- 解析タグ(body開始直後) ここまで -->
+	
+	<!-- TemplateBeginPassthroughIf cond="_document['INNER_META']" --><!-- 下層用META -->
+	<h1>@@@(PAGENAME_JA)@@@｜[title]</h1>
+	<!-- TemplateEndPassthroughIf -->
+	<!-- TemplateBeginPassthroughIf cond="!_document['INNER_META']" --><!-- トップ用META -->
+	<h1>[title]</h1>
+	<!-- TemplateEndPassthroughIf -->
+	
+	<div class="wrap" id="pagetop">
+	<!-- InstanceBeginEditable name="CONTENT" -->
+	<!-- TemplateBeginEditable name="CONT" --> 
+	<!-- ページ固有HTML ここから -->
+	MAP
+	<!-- ページ固有HTML ここまで -->
+	<!-- TemplateEndEditable -->
+	
+	<p><a href="javascript:print();">印刷</a></p>
+	<p><a href="javascript:window.close();">閉じる</a></p>
+
+<!-- InstanceEndEditable -->
+	</div>
+	
+	<!-- InstanceBeginEditable name="JS" -->
+	<!-- InstanceEndEditable -->
+	
+<!-- 解析タグ(body終了直前) ここから -->
+	
+<!-- 解析タグ(body終了直前) ここまで -->
+	
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,247 @@
+@charset "utf-8";
+/*! Writen  by SCSS */
+@import "mixin";
+
+/* RESET */
+a,img,ul,li,table,tr,td,p,h1,h2,h3,h4,h5,h6,ol,div,body,html,dl,dt,dd,h1,h2,h3,h4,h5,h6,hr,header,footer,section,figure,figcaption,aside,main,span {
+	padding:0px;
+	margin:0px;
+	border:none;
+	list-style:none;
+	font-weight:inherit;
+	font-size:1em;
+}
+header,footer,section,figure,figcaption,aside,main {
+	display: block;
+}
+img { vertical-align:middle; max-width:100%; height:auto; -webkit-backface-visibility: hidden; }
+a img { border:none; }
+
+/*font-style
+---------------------------------------*/
+
+body {
+	font-size:14px; 
+	line-height:1.8;
+	//@extend .gothic;
+	color: #333;
+	font-weight: 500;
+	-webkit-text-size-adjust:100%;
+	text-size-adjust:100%;
+	
+	/*	ゴシック体	*/
+	font-family:YakuHanJP,"Noto Sans JP","游ゴシック","Yu Gothic",YuGothic,"游ゴシック体","Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+	
+	/*	明朝体	*/
+	font-family:YakuHanMP,"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","游明朝",YuMincho,"游明朝体","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","HGS明朝E","ＭＳ Ｐ明朝",serif;
+	
+	*,*:before,*:after{box-sizing: border-box;}
+	*.bs_cb{box-sizing: content-box;}
+	.wrap {
+		position: relative;
+		overflow: hidden;
+	}
+	
+}
+
+i.iefontfix{
+	transform: translateY(0.2em);
+	font-style: inherit;
+}
+
+.kerning{
+	font-feature-settings: "palt";
+}
+
+.bold { font-weight:bold; }
+.nobold { font-weight:normal; }
+
+/*fontfamily-style
+---------------------------------------*/
+
+.mincho{
+	font-family:YakuHanMP,"游明朝","Yu Mincho",YuMincho,"游明朝体","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","HGS明朝E","ＭＳ Ｐ明朝", serif;
+	@include mq($br_tb){
+		font-family: YakuHanMP,"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","游明朝",YuMincho,"游明朝体","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","HGS明朝E","ＭＳ Ｐ明朝",serif;
+	}
+}
+.gothic{
+	font-family:YakuHanJP,"游ゴシック","Yu Gothic",YuGothic,"游ゴシック体","Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo, sans-serif;
+	@include mq($br_tb){
+		font-family: YakuHanJP,"Noto Sans JP","游ゴシック","Yu Gothic",YuGothic,"游ゴシック体","Lucida Grande","Hiragino Kaku Gothic ProN", Meiryo,sans-serif;
+	}
+}
+
+/*color-style
+---------------------------------------*/
+
+$colors: (
+	red:#990000,
+	blue:#000099,
+	green:#009900,
+	yellow:#FFFF00
+);
+
+@each $name ,$code in $colors {
+	.color_#{$name} {
+		color:#{$code};
+	}
+	.bg_#{$name} {
+		background-color:#{$code};
+	}
+}
+
+/*link-style
+---------------------------------------*/
+a { text-decoration:none;  color:inherit; } /* NEW! */
+
+body>img,body>iframe{
+	display:none;
+}
+
+/*** CLEAR-FIX ***/
+.clearfix:after { content: ""; display: block; clear: both; height:0; }
+
+ /* ふんわりアルファオーバー */
+.alpha a{
+	img{
+		transition:all 0.2s ease-in-out 0s;
+		will-change:opacity;
+	}
+	#{$pc} &:hover img{
+		opacity:0.7;
+	}
+}
+
+/* fade utility  ふんわりマウスオーバー画像置換 */
+.fadeimg_wrap{
+	display:inline-block;
+	position:relative;
+	
+	img{
+		transition:all 0.3s ease-in-out 0s;
+
+		&.off{
+			position:relative;
+			z-index:1;
+		}
+		
+		&.on{
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:2;
+			opacity:0;
+		}		
+	}
+	#{$pc} &:hover{
+		img.off{ opacity:0;}	
+		img.on{ opacity:1;}
+	}
+}
+
+
+.cl_b{clear:both;} /* NEW! */
+
+/*caption*/
+
+.cap_l{
+	text-align:left;
+	font-size:10px;
+	@include mq($br_sp){
+		font-size:10px;
+	}
+}
+.cap_r{
+	text-align:right;
+	font-size:10px;
+	@include mq($br_sp){
+		font-size:10px;
+	}
+}
+
+.center{
+	margin-left:auto !important;
+	margin-right:auto !important;
+}
+
+/*** ALIGN ***/
+.ta_c { text-align:center; }
+.ta_r { text-align:right; }
+.ta_l { text-align:left; }
+
+@media screen and (max-width: #{$br_tb}px){
+	.ta_c_pc { text-align:center; }
+	.ta_r_pc { text-align:right; }
+	.ta_l_pc { text-align:left; }
+}
+
+@media not screen, screen and (min-width: #{$br_tb+1}px){
+	.ta_c_sp { text-align:center; }
+	.ta_r_sp { text-align:right; }
+	.ta_l_sp { text-align:left; }
+}
+
+
+#{$pc} a.sp_link{
+	pointer-events: none;
+}
+
+
+.shiny a {
+    display: inline-block;
+	max-width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.shiny a:before {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    left: -100%;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+	background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 25%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%);
+	animation: shiny 4s infinite linear 0s;
+}
+
+/*光の起点と終点の指定*/
+@keyframes shiny {
+    0% {
+        left: -100%;
+    }
+    20%,100% {
+        left: 100%;
+    }
+}
+//sp時に幅を縮小
+@for $i from 1 through 10 {
+	.w#{$i * 10}_sp {
+		@include mq($br_sp){
+			width: 10% * $i;
+			margin: 0 auto;
+		}
+	}
+}
+@include breakpoint(1900);
+@include breakpoint(1800);
+@include breakpoint(1600);
+@include breakpoint(1500);
+@include breakpoint(1400);
+@include breakpoint(1300);
+@include breakpoint(1200);
+@include breakpoint(1024);
+@include breakpoint(960);
+@include breakpoint(900);
+@include breakpoint(820);
+@include breakpoint(768);
+@include breakpoint(767);
+@include breakpoint(480);
+@include breakpoint(375);
+@include breakpoint(360);
+@include breakpoint(320);
+
+@import "default";
+@import "style";

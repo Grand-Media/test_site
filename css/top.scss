@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*! Writen  by SCSS */
+@import "mixin";
+
+
+.mainvisual{
+	position: relative;
+	
+	.main_image{
+		position: relative;
+		&:before{
+			content:"";
+			display: block;
+			background:#600;
+			padding-bottom:40%;
+			pointer-events: none;
+		}
+	}
+	
+	
+	.main_ttl_wrap{
+		position: absolute;
+		inset:0;
+		display: flex;
+		justify-content: center;
+		align-items:center;
+		.main_ttl{
+			font-size:clamp_gm(30,1200,40);
+			color:#FFF;
+			line-height: 1;
+			span{
+				@for $i from 1 through 16 {
+					&:nth-of-type(#{$i}) {
+						transition-delay: #{($i - 1) * 0.1}s;
+						@include mq($br_sp){
+							transition-delay: #{($i - 1) * 0.15}s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

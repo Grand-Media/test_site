@@ -1,0 +1,189 @@
+
+// site settings:
+//変数一覧・共通して使う色、数値などの設定
+//変数がうまく使えない場合 #{$変数名} で使います
+$cont_width : 1200px;
+$pc : "body:not(.mobile)" ;
+
+$color_main : #900000;
+$color02 : #C00000;
+$color03 : #300000;
+
+$main_bg : #eeeeee;
+$bg1 : #cccccc;
+$bg2 : #eeeeee;
+
+//_style.scssで使っているナビの切り替えサイズ
+$nav_change:768;
+
+$br_pc : 960;
+$br_air : 820;
+$br_tb : 768;
+$br_sp : 480;
+
+
+
+// breakpoint
+//.vpc~、.vsp~の追加。common.scssに記述してください。
+@mixin breakpoint($break:1200){
+	@media screen and (max-width: #{$break}px){ // VPC
+		.vpc#{$break}{
+			display: none;	
+		}
+	}
+	@media not screen, screen and (min-width: #{1 + $break}px){ // VSP
+		.vsp#{$break}{
+			display: none;	
+		}
+	}
+}
+
+// width percentage(ceil)
+//使用方法・@include w_per(親の幅,子の幅);
+//子の幅のmax-width: px;とwidthの%数値を返します。数値は切り上げ。
+@mixin w_per($parent:$cont_width,$child:$cont_width/2) {
+	$per:ceil($child/$parent*10000%) / 100;
+	max-width: #{$child}px;
+	width:$per;
+}
+//使用方法・値の箇所に cal_per(親の幅,子の数値)
+//子の数値の%数値を返します。数値は切り上げ。width以外の場所で使いたい際に
+@function cal_per($parent:$cont_width,$child:$cont_width/2) {
+	@return ceil($child/$parent*10000%) / 100;
+}
+
+// width percentage(floor)
+//使用方法・@include w_per_f(親の幅,子の幅);
+//w_perの計算結果が切り捨てになっています。
+@mixin w_per_f($parent:$cont_width,$child:$cont_width/2) {
+	$per:floor($child/$parent*10000%) / 100;
+	width:$per;
+}
+//使用方法・値の箇所に flr_per(親の幅,子の数値)
+//cal_perの計算結果が切り捨てになっています。
+@function flr_per($parent:$cont_width,$child:$cont_width/2) {
+	@return floor($child/$parent*10000%) / 100;
+}
+// width percentage(round)
+//使用方法・@include w_per_r(親の幅,子の幅);
+//w_perの計算結果が四捨五入になっています。
+@mixin w_per_r($parent:$cont_width,$child:$cont_width/2) {
+	$per:round($child/$parent*10000%) / 100;
+	width:$per;
+}
+
+//vw
+//使用方法・値の箇所に cal_vw(親の幅,子の数値)
+//子の数値の%数値を返します。数値は切り上げ。vwの計算式です
+@function cal_vw($parent:$cont_width,$child:$cont_width) {
+	@return ceil($child/$parent*10000vw) / 100;
+}
+//使用方法・値の箇所に cal_vw(親の幅,子の数値)
+//子の数値の%数値を返します。数値は切り上げ。vwの計算式です
+@function flr_vw($parent:$cont_width,$child:$cont_width) {
+	@return floor($child/$parent*10000vw) / 100;
+}
+
+//vh
+//使用方法・値の箇所に cal_vh(親の幅,子の数値)
+//子の数値の%数値を返します。数値は切り上げ。vhの計算式です
+@function cal_vh($parent:$cont_width,$child:$cont_width) {
+	@return ceil($child/$parent*10000vh) / 100;
+}
+//line-heught計算
+//使用方法・@include lh(psdの行送り,フォントサイズ);
+@mixin lh($line_hight:$lh,$font_size:$fz) {
+	$calc_lh:ceil($line_hight / $font_size * 100) / 100;
+	line-height: $calc_lh;
+}
+
+//各シャドウ計算
+//使用方法・@include t_shadow_spr(広がりの数値,シャドウの色コード);
+//計算結果のtext-shadowを返します。
+@mixin t_shadow_spr($spread:10, $shadow-color:#000000){
+	$sha:(0px 0px 0px #{$shadow-color});
+	@for $i from 1 through $spread {
+		$sha:(#{$sha} , 0px 0px #{$i}px #{$shadow-color});
+	}
+	text-shadow:$sha;
+}
+
+//b_shadow_spr box-shadow用
+@mixin b_shadow_spr($spread:10, $shadow-color:#000000){
+	$sha:(0px 0px 0px #{$shadow-color});
+	@for $i from 1 through $spread {
+		$sha:(#{$sha} , 0px 0px #{$i}px #{$shadow-color});
+	}
+	box-shadow:$sha;
+}
+
+//f_shadow_spr filter: drop-shadow()用
+@mixin f_shadow_spr($spread:10, $shadow-color:#000000){
+	$sha:drop-shadow(0px 0px 0px #{$shadow-color});
+	@for $i from 1 through $spread {
+		$sha:(#{$sha} drop-shadow(0px 0px #{$i}px #{$shadow-color}));
+	}
+	filter:$sha;
+}
+
+//ブレークポイント設定
+//使用方法・@include mq(ブレークポイント数値){}
+//@media screen and (max-width:~){}として使えます
+@mixin mq($bp: 768) {
+	@media screen and (max-width: #{$bp}px) {
+		@content;
+	}
+}
+
+//@media screen and (min-width:~){}として使えます
+@mixin mq_min($bp: 768) {
+	@media screen and (min-width: #{$bp}px) {
+		@content;
+	}
+}
+//ホバー要素
+//使用方法・@include hover{}
+//hoverが効くデバイスでのみhover要素を使いたい際に
+@mixin hover {
+	@media (hover: hover) {
+		&:hover{
+			@content;
+		}
+	}
+}
+
+//フォントサイズvw計算式
+@mixin font_vw($window:$window_width,$font_size:$fz) {
+	font-size: flr_vw($window,$font_size);
+}
+
+//clampの中などで使いたい用
+@function fz_vw($window:$window_width,$font_size:$fz) {
+	@return flr_vw($window,$font_size);
+}
+
+//emの計算結果がでます。切り捨て。
+@function cal_em($font_size:$fz,$size:$size) {
+	$calc_em:floor($size / $font_size * 100) / 100;
+	@return #{$calc_em}em;
+}
+
+//clampの自動計算（0以上）
+@function clamp_gm($minsize, $width, $maxsize) {
+	$clamp_vw: ceil(($maxsize / $width) * 100000) / 1000;
+	@return clamp(#{$minsize}px, #{$clamp_vw}vw, #{$maxsize}px);
+}
+//clampの自動計算（0未満）
+@function clamp_gm_minus($minsize, $width, $maxsize) {
+	$clamp_vw: ceil(($maxsize / $width) * 100000) / 1000;
+	@return clamp(#{$maxsize}px, #{$clamp_vw}vw, #{$minsize}px);
+}
+
+//疑似要素で外線
+%ov-border {
+	content: "";
+	display: block;
+	position: absolute;
+	inset:0;
+	pointer-events: none;
+} //@extend %ov-border;
