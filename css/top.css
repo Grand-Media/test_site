@@ -7,7 +7,7 @@
       content: "";
       display: block;
       background: #600;
-      padding-bottom: 40%;
+      padding-bottom: 25%;
       pointer-events: none; }
   .mainvisual .main_ttl_wrap {
     position: absolute;
@@ -99,5 +99,10 @@
         @media screen and (max-width: 480px) {
           .mainvisual .main_ttl_wrap .main_ttl span:nth-of-type(16) {
             transition-delay: 2.25s; } }
+
+.sec01 .sec_ttl {
+  font-size: clamp(20px, 3vw, 36px);
+  text-align: center;
+  color: #900; }
 
 /*# sourceMappingURL=top.css.map */
